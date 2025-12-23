@@ -1,76 +1,72 @@
-Foodpanda Website Clone (Frontend)
-📖 Project Description
+# Foodpanda Website Clone (Frontend)
 
-This project is a frontend clone of the official Foodpanda website, developed as part of an academic assignment.
-The objective was to closely replicate the UI, layout, and user interactions of Foodpanda by analyzing the live website using browser developer tools (Inspect Element).
+## 📖 Project Description
+This project is a **frontend clone of the official Foodpanda website**, developed as part of an academic assignment.  
+The goal was to replicate the **UI, layout, and user interactions** by analyzing the live website using browser developer tools (Inspect Element).
 
-The project focuses on frontend structure, responsiveness, and clean UI implementation, not backend functionality.
-
-
-🎯 Project Objectives
-Understand real-world website architecture.
-Practice cloning a professional website UI.
-Improve skills in HTML, CSS, Tailwind CSS, and JavaScript.
-Learn effective use of browser inspection tools.
-Deliver a clean, responsive, and professional frontend project.
+The project focuses on **frontend structure, responsiveness, and clean UI implementation**, without any backend functionality.
 
 
-🛠️ Technologies & Tools Used
-HTML5 – Semantic and accessible markup.
-CSS3 – Custom styling and layout control.
-Tailwind CSS – Utility-first responsive design.
-JavaScript (ES6) – Interactive components and dynamic behavior.
-Browser DevTools – UI inspection and layout analysis.
 
+## 🎯 Project Objectives
+- Understand real-world website architecture  
+- Practice cloning a professional website UI  
+- Improve skills in HTML, CSS, Tailwind CSS, and JavaScript  
+- Learn effective use of browser inspection tools  
 
-✨ Key Features
-Pixel-accurate homepage layout inspired by Foodpanda.
-Interactive location selection dropdown.
-Hover and click-based UI interactions.
-Responsive layout optimized for desktop screens.
-Clean, structured, and maintainable code.
+---
 
+## 🛠️ Technologies & Tools Used
+- **HTML5** – Semantic markup  
+- **CSS3** – Custom styling  
+- **Tailwind CSS** – Utility-first responsive design  
+- **JavaScript (ES6)** – UI interactions  
+- **Browser DevTools** – Layout and UI analysis  
 
-🚀 How to Run the Project
-Download or clone the project repository.
-Open the project folder.
-Run index.html in any modern web browser.
-No additional setup or dependencies required.
+---
 
+## ✨ Key Features
+- Foodpanda-inspired homepage layout  
+- Interactive location selection dropdown  
+- Hover and click-based UI interactions  
+- Responsive desktop-friendly design  
+- Clean and maintainable code structure  
 
-📌 Scope of the Project
-This project covers:
-Frontend UI development only.
-Static content and basic interactivity.
+---
 
-This project does not include:
-Backend services
-Real-time API integrations.
-Payment or authentication systems.
+## 🚀 How to Run the Project
+1. Download or clone the project  
+2. Open the project folder  
+3. Run `index.html` in any modern web browser  
 
+No additional setup or dependencies are required.
 
-⚠️ Legal Disclaimer
-This project is created strictly for educational purposes.
-All trademarks, logos, brand names, and design inspirations belong to Foodpanda.
-This clone is not intended for commercial use, redistribution, or monetization.
+---
 
+## 📌 Project Scope
+**Included:**
+- Frontend UI development  
+- Static content and basic interactivity  
 
-👨‍💻 Developer Information
+**Not Included:**
+- Backend services  
+- API integrations  
+- Authentication or payment systems  
 
-Developer Name: Moiz Sheikh
-Role: Frontend Developer (Student)
-Skills Applied:
-HTML & CSS
-Tailwind CSS
-JavaScript
-UI Analysis & Cloning
+---
 
+## ⚠️ Legal Disclaimer
+This project is created **strictly for educational purposes**.  
+All trademarks, logos, and design inspirations belong to **Foodpanda**.  
+This project is **not intended for commercial use**.
 
-📈 Learning Outcomes
-Practical experience with real-world UI cloning.
-Improved understanding of responsive layouts.
-Hands-on use of Tailwind CSS.
-Better code organization and documentation skills.
+---
 
-🏁 Conclusion
-This project demonstrates the ability to analyze, design, and implement a professional-level frontend interface by following industry practices. It reflects strong attention to detail, clean code standards, and a clear understanding of modern web development fundamentals.
+## 👨‍💻 Developer
+**Moiz Sheikh**  
+Frontend Developer (Student)
+
+---
+
+## 🏁 Conclusion
+This project demonstrates the ability to analyze and recreate a professional frontend interface using modern web development practices.
