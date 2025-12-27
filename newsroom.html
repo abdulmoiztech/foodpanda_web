@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodpanda Newsroom Clone</title>
+    <link rel="icon" type="image/png" href="https://www.ladysoda.com/wp-content/uploads/2019/11/foodpanda-1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+
+        .active-filter {
+            background-color: black !important;
+            color: white !important;
+            border-color: black !important;
+        }
+
+        .filter-btn:hover {
+            border-color: #ff2b85 !important;
+            color: #ff2b85 !important;
+        }
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+<body>
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <!-- Logo -->
+            <img src="https://www.foodpanda.com/wp-content/uploads/2023/06/foodpanda_logo_2023.svg" class="logo"
+                alt="foodpanda">
+
+            <!-- Desktop Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="aboutpg.html" class="nav-link">About</a>
+                <a href="newsroom.html" class="nav-link active">Newsroom</a>
+                <a href="partners.html" class="nav-link">Partners</a>
+                <a href="pandaads.html" class="nav-link">Panda Ads</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="jobs.html" class="nav-link">Careers</a>
+            </nav>
+
+
+            <!-- Choose Location -->
+            <div class="location-wrapper">
+                <button id="locationBtn" class="location-btn">Choose location</button>
+
+                <button class="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+
+                <ul id="locationDropdown" class="location-dropdown">
+                    <li>Bangladesh</li>
+                    <li>Cambodia</li>
+                    <li>Hong Kong</li>
+                    <li>Laos</li>
+                    <li>Malaysia</li>
+                    <li>Myanmar</li>
+                    <li>Pakistan</li>
+                    <li>Philippines</li>
+                    <li>Singapore</li>
+                    <li>Taiwan</li>
+                    <li>Thailand</li>
+                </ul>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="hamburger" class="hamburger">☰</button>
+
+        </div>
+    </header>
+
+    <!-- ================= MOBILE MENU ================= -->
+    <div id="mobileMenu" class="mobile-menu">
+        <div class="mobile-top">
+            <img src="https://www.foodpanda.com/wp-content/uploads/2023/06/foodpanda_logo_2023.svg">
+            <span id="closeMenu">✕</span>
+        </div>
+
+        <ul class="mobile-links">
+            <li>Home</li>
+            <li><a href="aboutpg.html">About</a></li>
+            <li><a href="newsroom.html">Newsroom</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="pandaads.html">panda ads</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <a href="jobs.html" class="nav-link">Careers</a>
+            <!-- Mobile Choose Location -->
+            <li id="mobileLocationBtn">Choose location ▸</li>
+            <ul id="mobileLocationDropdown" class="mobile-location">
+                <li>Bangladesh</li>
+                <li>Cambodia</li>
+                <li>Hong Kong</li>
+                <li>Laos</li>
+                <li>Malaysia</li>
+                <li>Myanmar</li>
+                <li>Pakistan</li>
+                <li>Philippines</li>
+                <li>Singapore</li>
+                <li>Taiwan</li>
+                <li>Thailand</li>
+            </ul>
+        </ul>
+    </div>
+
+
+
+    <div class="max-w-6xl mx-auto px-4 py-12" style="margin-top: 80px;">
+        <h1 class="text-3xl md:text-4xl font-bold mb-8 text-[#333]">Press Releases</h1>
+
+        <div class="flex flex-col md:flex-row bg-[#f7f7f7] mb-16 overflow-hidden rounded-lg">
+            <div class="md:w-1/2">
+                <img src="https://www.foodpanda.com/wp-content/uploads/2025/12/EDW_0166-1.jpg" alt="Featured"
+                    class="w-full h-full object-cover">
+            </div>
+            <div class="md:w-1/2 p-12 flex flex-col justify-center">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="text-[#ff2b85] font-bold text-xs uppercase tracking-widest">Merchants</span>
+                    <span class="text-gray-400 text-xs">17 Dec 2025</span>
+                </div>
+                <h2 class="text-3xl font-bold leading-tight hover:text-[#ff2b85] cursor-pointer transition">foodpanda
+                    strengthens merchant care with record onboarding milestone in Asia</h2>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+            <h2 class="text-2xl font-bold">Discover latest news</h2>
+
+            <div id="filter-container" class="flex flex-wrap gap-2 md:justify-end max-w-2xl">
+            </div>
+        </div>
+
+        <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </div>
+
+        <div class="flex justify-center mt-12 gap-2 text-sm text-gray-400">
+            <span class="bg-gray-200 text-black px-3 py-1 rounded-full cursor-pointer">1</span>
+            <span class="px-3 py-1 cursor-pointer hover:text-black">2</span>
+            <span class="px-3 py-1 cursor-pointer hover:text-black">3</span>
+            <span>...</span>
+            <span class="px-3 py-1 cursor-pointer hover:text-black">13</span>
+        </div>
+    </div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Logo Row -->
+            <div class="footer-logo-row">
+                <img src="https://www.foodpanda.com/wp-content/uploads/2023/06/foodpanda_logo_2023.svg"
+                    alt="foodpanda logo">
+            </div>
+
+            <!-- Links Grid -->
+            <div class="footer-links-grid">
+                <!-- Column 1: Navigate -->
+                <div class="footer-col">
+                    <h3>Navigate</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutpg.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="newsroom.html">Newsroom</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Collaborate -->
+                <div class="footer-col">
+                    <h3>Collaborate</h3>
+                    <ul>
+                        <li><a href="jobs.html">Explore careers</a></li>
+                        <li><a href="pandapatner.html">Become a rider</a></li>
+                        <li><a href="partners.html">Feed your team</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Follow us (Socials) -->
+                <div class="footer-col social-col">
+                    <h3>Follow us on</h3>
+                    <div class="social-icons">
+                        <a href="index.html" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                            </svg>
+                        </a>
+                        <a href="index.html" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.066 11.993V6.287H3.66v5.706h1.406zM4.332 5.617c.463 0 .762-.303.762-.682s-.299-.682-.762-.682c-.463 0-.762.303-.762.682s.299.682.762.682zM12.67 12V8.45c0-1.898-.992-2.784-2.338-2.784-1.086 0-1.572.603-1.841 1.018V6.287H7.066s.018.397 0 5.706h1.425V9.456s.005-1.127.05-1.541c.068-.614.526-1.103 1.156-1.103.822 0 1.15.627 1.15 1.541V12h1.425z" />
+                            </svg>
+                        </a>
+                        <a href="index.html" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.232-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="copyright">Copyright © 2025 foodpanda</p>
+                <a href="privacy.html" class="privacy-link">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+        </svg>
+    </button>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+
+
+    <script>
+        const categories = ["All", "Business", "Campaigns", "Editorials", "Food delivery", "Infographics", "Merchants", "panda ads", "pandago", "Press Releases", "Q-commerce", "Riders", "Tech"];
+
+        const newsData = [
+            { id: 1, cat: "APAC", date: "17.12.2025", title: "foodpanda strengthens merchant care with record onboarding milestone in Asia", img: "https://www.foodpanda.com/wp-content/uploads/2025/12/EDW_0166-1.jpg", type: "Business" },
+            { id: 2, cat: "APAC", date: "25.11.2025", title: "foodpanda expands 'panda hearts' programme, reports 30% drop in rider accidents", img: "https://www.foodpanda.com/wp-content/uploads/2023/12/fp-giftcard-2.jpg", type: "Riders" },
+            { id: 3, cat: "APAC", date: "21.11.2025", title: "foodpanda brings unmatched value to pandapro members with ride-hailing partnerships", img: "https://www.foodpanda.com/wp-content/uploads/2024/10/website_banner_1440x480px.webp", type: "Campaigns" },
+            { id: 4, cat: "SINGAPORE", date: "25.04.2025", title: "foodpanda Singapore strengthens support for delivery partners through signed MOU", img: "https://www.foodpanda.com/wp-content/uploads/2025/12/EDW_0166-1.jpg", type: "Riders" },
+            { id: 5, cat: "APAC", date: "31.01.2025", title: "foodpanda delivered 2024", img: "https://www.foodpanda.com/wp-content/uploads/2023/12/fp-giftcard-2.jpg", type: "Editorials" },
+            { id: 6, cat: "APAC", date: "23.10.2024", title: "foodpanda Partners with Fiserv to Enable More Streamlined and Secure Payments", img: "https://www.foodpanda.com/wp-content/uploads/2024/10/website_banner_1440x480px.webp", type: "Tech" }
+        ];
+
+        let activeFilter = "All";
+        let isExpanded = true;
+
+        function renderFilters() {
+            const container = document.getElementById('filter-container');
+            container.innerHTML = '';
+
+            const visibleCats = isExpanded ? categories : categories.slice(0, 4);
+
+            visibleCats.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = `filter-btn border border-gray-400 rounded-full px-4 py-1 text-sm font-semibold transition ${activeFilter === cat ? 'active-filter' : ''}`;
+                btn.innerText = cat;
+                btn.onclick = () => { activeFilter = cat; renderContent(); };
+                container.appendChild(btn);
+            });
+
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = "text-[#ff2b85] font-bold text-sm ml-2 underline";
+            toggleBtn.innerText = isExpanded ? "Show less" : "Show more";
+            toggleBtn.onclick = () => { isExpanded = !isExpanded; renderFilters(); };
+            container.appendChild(toggleBtn);
+        }
+
+        function renderContent() {
+            const grid = document.getElementById('news-grid');
+            grid.innerHTML = '';
+
+            const filtered = activeFilter === "All" ? newsData : newsData.filter(item => item.type === activeFilter);
+
+            filtered.forEach(item => {
+                grid.innerHTML += `
+                    <div class="flex flex-col group cursor-pointer">
+                        <div class="overflow-hidden rounded-xl mb-4 h-48">
+                            <img src="${item.img}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <span class="text-[#ff2b85] font-bold text-[10px] tracking-widest uppercase mb-2">${item.cat}</span>
+                        <h3 class="font-bold text-lg leading-snug group-hover:text-[#ff2b85] mb-4">${item.title}</h3>
+                        <span class="text-gray-400 text-xs mt-auto">${item.date}</span>
+                    </div>
+                `;
+            });
+            renderFilters();
+        }
+
+        renderContent();
+    </script>
+
+
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

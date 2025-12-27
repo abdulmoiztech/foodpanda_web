@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodpanda for Business - Clone</title>
+    <link rel="icon" type="image/png" href="https://www.ladysoda.com/wp-content/uploads/2019/11/foodpanda-1.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fp-pink': '#D70F64', // Official Foodpanda Pink
+                        'fp-hover': '#b00c50',
+                        'fp-gray': '#F7F7F7',
+                        'fp-dark': '#333333'
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .modal-transition {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                    alt="Foodpanda for Business" class="h-8 md:h-10">
+            </a>
+
+            <div class="flex items-center space-x-6">
+                <a href="#login"
+                    onclick="openInfoModal('Log into company portal', 'Redirecting to secure login page...')"
+                    class="text-sm font-semibold hidden md:block hover:text-fp-pink">Log into company portal</a>
+                <button onclick="openGetStartedModal()"
+                    class="bg-fp-pink text-white text-sm font-bold px-5 py-2.5 rounded hover:bg-fp-hover transition duration-300">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container mx-auto px-6 py-12 md:py-20 flex flex-col-reverse md:flex-row items-center">
+        <div class="w-full md:w-1/2 md:pr-12 mt-8 md:mt-0">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                Food worth working for
+            </h1>
+            <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                Treat your coworkers and clients to great food from the best restaurants. Fuel work-from-home sessions,
+                late nights in the office, corporate events, client meetings, and much more.
+            </p>
+            <button onclick="openGetStartedModal()"
+                class="bg-fp-pink text-white font-bold px-8 py-3 rounded shadow-lg hover:bg-fp-hover hover:shadow-xl transition transform hover:-translate-y-1">
+                Get started
+            </button>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center items-center">
+            <img src="https://images.deliveryhero.io/image/foodpanda/corporate/landing_page/illustration_gift.png"
+                alt="Happy Corporate Team" class="rounded-xl shadow-2xl w-full max-w-md object-contain aspect-[4/3]"
+                loading="lazy">
+        </div>
+
+    </header>
+
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-gray-900">foodpanda for business perks</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="flex flex-col items-start">
+                    <div class="text-4xl text-gray-800 mb-4"><i class="fa-solid fa-gift"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Corporate gift cards</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Manage all your employee gift cards from one
+                        place. Plus, schedule gift card deliveries in advance.</p>
+                    <button
+                        onclick="openInfoModal('Corporate Gift Cards', 'Send bulk vouchers to your employees instantly via our dashboard!')"
+                        class="border border-gray-300 text-gray-700 px-6 py-2 rounded font-semibold hover:border-fp-pink hover:text-fp-pink transition">
+                        Learn more
+                    </button>
+                </div>
+
+                <div class="flex flex-col items-start">
+                    <div class="text-4xl text-gray-800 mb-4"><i class="fa-solid fa-wallet"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Corporate allowance</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Provide meal allowances to employees directly
+                        from our dashboard. Time and money = saved.</p>
+                    <button
+                        onclick="openInfoModal('Corporate Allowance', 'Set daily, weekly, or monthly budgets for different teams easily.')"
+                        class="border border-gray-300 text-gray-700 px-6 py-2 rounded font-semibold hover:border-fp-pink hover:text-fp-pink transition">
+                        Learn more
+                    </button>
+                </div>
+
+                <div class="flex flex-col items-start">
+                    <div class="text-4xl text-gray-800 mb-4"><i class="fa-solid fa-crown"></i></div>
+                    <h3 class="text-xl font-bold mb-2">pandapro subscription</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Give your team access to exclusive pandapro
+                        perks like free delivery and extra discounts.</p>
+                    <button
+                        onclick="openInfoModal('pandapro Subscription', 'Get exclusive 10% off deals and unlimited free delivery for your staff.')"
+                        class="border border-gray-300 text-gray-700 px-6 py-2 rounded font-semibold hover:border-fp-pink hover:text-fp-pink transition">
+                        Learn more
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-fp-gray py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 md:pr-10 mb-10 md:mb-0">
+                <h2 class="text-3xl font-bold mb-8 text-gray-900">Why foodpanda for business?</h2>
+
+                <div class="mb-6">
+                    <h4 class="text-lg font-bold mb-1">Pay only what employees use</h4>
+                    <p class="text-gray-600 text-sm">No more money wasted on food allowances that employees don't touch.
+                    </p>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="text-lg font-bold mb-1">In-depth tracking</h4>
+                    <p class="text-gray-600 text-sm">The foodpanda for business company dashboard makes it easy to keep
+                        track of employee activities.</p>
+                </div>
+
+                <div class="mb-8">
+                    <h4 class="text-lg font-bold mb-1">Save time & money = Increase productivity</h4>
+                    <p class="text-gray-600 text-sm">We bend to your rules. Create custom allowances for different
+                        departments and deliver food anywhere - whether it's the office or employees' homes.</p>
+                </div>
+
+                <button
+                    onclick="openImageModal('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1115&q=80')"
+                    class="w-full md:w-auto bg-fp-pink text-white font-bold px-8 py-3 rounded shadow hover:bg-fp-hover transition text-center">
+                    Take a sneak peek at the dashboard
+                </button>
+            </div>
+
+            <div class="w-full md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                    alt="Dashboard Mockup" class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-16 text-gray-900">Keep your team happy & fed with foodpanda</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-utensils text-4xl text-gray-700 mb-4"></i>
+                    <p class="font-semibold text-gray-800 px-4">Save time and money with foodpanda for business
+                        allowances</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-ticket text-4xl text-gray-700 mb-4"></i>
+                    <p class="font-semibold text-gray-800 px-4">Recognize hard work or special occasions with employee
+                        gift cards</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-percent text-4xl text-gray-700 mb-4"></i>
+                    <p class="font-semibold text-gray-800 px-4">foodpanda for business members get at least 10% off
+                        foodpanda orders</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-fp-gray py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-2">Treat your team to thousands of top-rated restaurants</h2>
+            <p class="text-gray-600 mb-10 text-sm">With foodpanda for business, give your team access to the best
+                restaurants, dine-in deals and regular festival swarms.</p>
+
+            <div class="flex flex-wrap justify-center gap-6">
+                <div
+                    class="bg-white p-4 rounded shadow w-32 h-32 flex items-center justify-center font-bold text-gray-500">
+                    Burger King</div>
+                <div
+                    class="bg-white p-4 rounded shadow w-32 h-32 flex items-center justify-center font-bold text-gray-500">
+                    Subway</div>
+                <div
+                    class="bg-white p-4 rounded shadow w-32 h-32 flex items-center justify-center font-bold text-gray-500">
+                    PastaMania</div>
+                <div
+                    class="bg-white p-4 rounded shadow w-32 h-32 flex items-center justify-center font-bold text-gray-500">
+                    Sushi Tei</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4">What others are saying</h2>
+            <p class="text-gray-600 mb-8">Companies of all types and sizes are using foodpanda for business. So whether
+                you've got 10 employees or 10,000, you'll be in good company.</p>
+
+            <div class="bg-fp-gray p-8 rounded-lg relative">
+                <i class="fa-solid fa-quote-left text-4xl text-gray-400 mb-4 block"></i>
+                <p class="text-gray-700 italic text-lg mb-6 leading-relaxed">
+                    "I'm so grateful for foodpanda for business in helping me achieve the RepGromos Well-being
+                    initiative. It's so convenient and takes much stress off my RepGromos. They don't have to worry
+                    about running out of products or making a special trip to the store. It's one less thing they have
+                    to think about, and that's a huge relief."
+                </p>
+                <div class="font-bold text-gray-900">Ayesha Sultana</div>
+                <div class="text-sm text-gray-600">People Experience & Culture Specialist, Resstads</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-fp-gray py-16 border-t border-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12">Contact us</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="mb-4"><i class="fa-solid fa-building text-2xl"></i></div>
+                    <h3 class="font-bold text-lg mb-2">Become a foodpanda for business client</h3>
+                    <p class="text-sm text-gray-500 mb-1">Contact</p>
+                    <a href="#" onclick="openGetStartedModal()"
+                        class="text-sm font-bold underline decoration-1 underline-offset-2 hover:text-fp-pink">corporate.sales@foodpanda.sg</a>
+                </div>
+                <div>
+                    <div class="mb-4"><i class="fa-solid fa-utensils text-2xl"></i></div>
+                    <h3 class="font-bold text-lg mb-2">Order-related queries</h3>
+                    <p class="text-sm text-gray-500 mb-1">Contact</p>
+                    <a href="#"
+                        onclick="openInfoModal('Support', 'Please email corporate@foodpanda.sg for order support.')"
+                        class="text-sm font-bold underline decoration-1 underline-offset-2 hover:text-fp-pink">corporate@foodpanda.sg</a>
+                </div>
+                <div>
+                    <div class="mb-4"><i class="fa-solid fa-store text-2xl"></i></div>
+                    <h3 class="font-bold text-lg mb-2">List your restaurant</h3>
+                    <p class="text-sm text-gray-500 mb-1">Visit</p>
+                    <a href="#" onclick="openInfoModal('Partner', 'Redirecting to partner registration page...')"
+                        class="text-sm font-bold underline decoration-1 underline-offset-2 hover:text-fp-pink">partner.foodpanda.sg</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <div class="flex items-center gap-2 mb-4">
+                    <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                        alt="foodpanda logo" class="h-6">
+                    <span class="font-bold text-lg text-fp-pink">for business</span>
+                </div>
+                <div class="flex space-x-4 text-sm text-gray-400">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms of use</a>
+                </div>
+                <div class="flex space-x-4 mt-6">
+                    <a href="#"
+                        class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-fp-pink transition"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-fp-pink transition"><i
+                            class="fa-brands fa-twitter"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-fp-pink transition"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-fp-pink transition"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="flex space-x-4">
+                <button
+                    class="bg-gray-800 border border-gray-600 px-4 py-2 rounded flex items-center hover:bg-gray-700 transition">
+                    <i class="fa-brands fa-google-play text-xl mr-2"></i>
+                    <div class="text-left">
+                        <div class="text-[10px] uppercase">Get it on</div>
+                        <div class="text-sm font-bold">Google Play</div>
+                    </div>
+                </button>
+                <button
+                    class="bg-gray-800 border border-gray-600 px-4 py-2 rounded flex items-center hover:bg-gray-700 transition">
+                    <i class="fa-brands fa-apple text-xl mr-2"></i>
+                    <div class="text-left">
+                        <div class="text-[10px] uppercase">Download on the</div>
+                        <div class="text-sm font-bold">App Store</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <div id="getStartedModal"
+        class="fixed inset-0 z-50 hidden bg-black bg-opacity-60 flex items-center justify-center backdrop-blur-sm transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-lg p-8 relative transform transition-all scale-100">
+            <button onclick="closeModals()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800">
+                <i class="fa-solid fa-times text-xl"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <span class="text-fp-pink text-4xl mb-2 block"><i class="fa-solid fa-briefcase"></i></span>
+                <h3 class="text-2xl font-bold text-gray-800">Get started with foodpanda business</h3>
+                <p class="text-gray-600 text-sm mt-2">Fill in your details and we'll contact you shortly!</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('Thanks! We have received your request.'); closeModals();"
+                class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <input type="text" placeholder="First Name"
+                        class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-fp-pink"
+                        required>
+                    <input type="text" placeholder="Last Name"
+                        class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-fp-pink"
+                        required>
+                </div>
+                <input type="email" placeholder="Work Email"
+                    class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-fp-pink" required>
+                <input type="text" placeholder="Company Name"
+                    class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-fp-pink" required>
+                <button type="submit"
+                    class="w-full bg-fp-pink text-white font-bold py-3 rounded hover:bg-fp-hover transition">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="infoModal"
+        class="fixed inset-0 z-50 hidden bg-black bg-opacity-60 flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-md p-6 relative text-center">
+            <button onclick="closeModals()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800">
+                <i class="fa-solid fa-times text-xl"></i>
+            </button>
+            <div class="mb-4 text-fp-pink text-3xl">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <h3 id="infoTitle" class="text-xl font-bold text-gray-800 mb-2">Info</h3>
+            <p id="infoText" class="text-gray-600 mb-6">Details go here.</p>
+            <button onclick="closeModals()"
+                class="bg-gray-200 text-gray-800 px-6 py-2 rounded hover:bg-gray-300 transition">Close</button>
+        </div>
+    </div>
+
+    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-80 flex items-center justify-center p-4">
+        <button onclick="closeModals()" class="absolute top-6 right-6 text-white hover:text-gray-300 z-50">
+            <i class="fa-solid fa-times text-3xl"></i>
+        </button>
+        <img id="previewImage" src="" alt="Preview"
+            class="max-w-full max-h-[80vh] rounded shadow-2xl border-4 border-white">
+    </div>
+
+    <script>
+        // Function to open the "Get Started" Form
+        function openGetStartedModal() {
+            closeModals(); // Close others first
+            const modal = document.getElementById('getStartedModal');
+            modal.classList.remove('hidden');
+        }
+
+        // Function to open Generic Info Modal
+        function openInfoModal(title, text) {
+            closeModals();
+            const modal = document.getElementById('infoModal');
+            document.getElementById('infoTitle').innerText = title;
+            document.getElementById('infoText').innerText = text;
+            modal.classList.remove('hidden');
+        }
+
+        // Function to open Image Preview
+        function openImageModal(imageUrl) {
+            closeModals();
+            const modal = document.getElementById('imageModal');
+            document.getElementById('previewImage').src = imageUrl;
+            modal.classList.remove('hidden');
+        }
+
+        // Function to close ALL modals
+        function closeModals() {
+            document.getElementById('getStartedModal').classList.add('hidden');
+            document.getElementById('infoModal').classList.add('hidden');
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+
+        // Close modal if clicking outside content
+        window.onclick = function (event) {
+            const m1 = document.getElementById('getStartedModal');
+            const m2 = document.getElementById('infoModal');
+            const m3 = document.getElementById('imageModal');
+            if (event.target == m1 || event.target == m2 || event.target == m3) {
+                closeModals();
+            }
+        }
+    </script>
+</body>
+
+</html>

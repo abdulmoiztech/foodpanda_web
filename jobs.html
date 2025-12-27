@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search | foodpanda Careers</title>
+    <link rel="icon" type="image/png" href="https://www.ladysoda.com/wp-content/uploads/2019/11/foodpanda-1.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        panda: {
+                            pink: '#D70F64', // The specific foodpanda pink
+                            dark: '#333333',
+                            gray: '#F7F7F7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+
+        .job-card {
+            transition: all 0.3s ease;
+        }
+
+        .job-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Modal Animation */
+        .modal-enter {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .modal-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.2s;
+        }
+
+        .modal-exit {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-white">
+
+    <header class="bg-white border-b sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="w-32">
+                <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                    alt="foodpanda logo">
+            </a>
+
+            <div class="hidden md:flex flex-1 max-w-xl mx-8 relative">
+                <input type="text" placeholder="Start your job search here..."
+                    class="w-full border border-gray-300 rounded-full py-2 px-5 text-sm focus:outline-none focus:border-panda-pink transition">
+                <button
+                    class="absolute right-1 top-1 bg-panda-pink text-white rounded-full w-8 h-8 flex items-center justify-center">
+                    <i class="fas fa-search text-xs"></i>
+                </button>
+            </div>
+
+            <a href="#" class="text-panda-pink text-sm font-semibold flex items-center gap-2 hover:opacity-80">
+                Saved jobs <i class="far fa-star"></i>
+            </a>
+        </div>
+
+        <div class="border-t">
+            <div class="container mx-auto px-4 flex justify-center space-x-8 text-sm py-3 font-medium text-gray-700">
+                <button
+                    onclick="openModal('About Us', 'We are foodpanda! We are a small team of problem solvers, designers, thinkers and tinkers, working around the clock to make foodpanda the most powerful online food ordering tool.')"
+                    class="hover:text-panda-pink flex items-center gap-1">About Us <i
+                        class="fas fa-chevron-down text-xs"></i></button>
+                <button
+                    onclick="openModal('Why foodpanda?', 'Because we bring good food into your everyday. That means we don’t just deliver—we bring it, always going the extra mile to make your experience memorable.')"
+                    class="hover:text-panda-pink flex items-center gap-1">Why foodpanda? <i
+                        class="fas fa-chevron-down text-xs"></i></button>
+                <button
+                    onclick="openModal('Jobs', 'Explore thousands of jobs across engineering, sales, marketing, and operations. Your next adventure starts here.')"
+                    class="hover:text-panda-pink flex items-center gap-1">Jobs <i
+                        class="fas fa-chevron-down text-xs"></i></button>
+                <button
+                    onclick="openModal('Locations', 'We operate in over 400 cities across 11 markets in Asia and Europe. Find a location near you.')"
+                    class="hover:text-panda-pink flex items-center gap-1">Locations <i
+                        class="fas fa-chevron-down text-xs"></i></button>
+                <button
+                    onclick="openModal('pandastories', 'Read about the people behind the panda. Inspiring stories from our riders, employees, and partners.')"
+                    class="hover:text-panda-pink flex items-center gap-1">pandastories <i
+                        class="fas fa-chevron-down text-xs"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Job results</h1>
+            <p class="text-xl font-bold text-gray-900">206 result(s)</p>
+        </div>
+
+        <div class="bg-gray-100 rounded-full p-2 flex flex-wrap justify-center gap-4 mb-12 max-w-4xl mx-auto">
+            <div class="relative group">
+                <button
+                    class="bg-white border rounded-full px-6 py-2 text-sm text-gray-600 flex items-center gap-2 w-40 justify-between">Location
+                    <i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="relative group">
+                <button
+                    class="bg-white border rounded-full px-6 py-2 text-sm text-gray-600 flex items-center gap-2 w-40 justify-between">Job
+                    Category <i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="relative group">
+                <button
+                    class="bg-white border rounded-full px-6 py-2 text-sm text-gray-600 flex items-center gap-2 w-40 justify-between">Job
+                    Type <i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="relative group">
+                <button
+                    class="bg-white border rounded-full px-6 py-2 text-sm text-gray-600 flex items-center gap-2 w-40 justify-between">Time
+                    Type <i class="fas fa-chevron-down"></i></button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 mb-12 px-2 md:px-10">
+
+            <div
+                class="job-card relative border border-gray-200 rounded-xl pt-12 pb-8 px-6 text-center flex flex-col items-center bg-white">
+                <div class="absolute top-4 right-4 text-panda-pink hover:scale-110 transition cursor-pointer"><i
+                        class="far fa-star text-lg"></i></div>
+                <div
+                    class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white border border-gray-100 p-3 rounded-full shadow-sm">
+                    <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                        class="w-8 opacity-80" alt="icon">
+                </div>
+
+                <h3 class="font-bold text-lg mb-4 text-gray-800 leading-tight min-h-[50px]">Product Manager<br>(Pickup)
+                </h3>
+                <div class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-panda-pink"></i> Singapore
+                </div>
+                <button onclick="openJobModal('Product Manager (Pickup)', 'Singapore')"
+                    class="bg-panda-pink text-white text-xs font-bold py-3 px-8 rounded-full uppercase tracking-wide hover:bg-pink-700 transition">Read
+                    More</button>
+            </div>
+
+            <div
+                class="job-card relative border border-gray-200 rounded-xl pt-12 pb-8 px-6 text-center flex flex-col items-center bg-white">
+                <div class="absolute top-4 right-4 text-panda-pink hover:scale-110 transition cursor-pointer"><i
+                        class="far fa-star text-lg"></i></div>
+                <div
+                    class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white border border-gray-100 p-3 rounded-full shadow-sm">
+                    <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                        class="w-8 opacity-80" alt="icon">
+                </div>
+                <h3 class="font-bold text-lg mb-4 text-gray-800 leading-tight min-h-[50px]">Specialist, Field Sales</h3>
+                <div class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-panda-pink"></i> Malacca, Malaysia
+                </div>
+                <button onclick="openJobModal('Specialist, Field Sales', 'Malacca, Malaysia')"
+                    class="bg-panda-pink text-white text-xs font-bold py-3 px-8 rounded-full uppercase tracking-wide hover:bg-pink-700 transition">Read
+                    More</button>
+            </div>
+
+            <div
+                class="job-card relative border border-gray-200 rounded-xl pt-12 pb-8 px-6 text-center flex flex-col items-center bg-white">
+                <div class="absolute top-4 right-4 text-panda-pink hover:scale-110 transition cursor-pointer"><i
+                        class="far fa-star text-lg"></i></div>
+                <div
+                    class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white border border-gray-100 p-3 rounded-full shadow-sm">
+                    <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                        class="w-8 opacity-80" alt="icon">
+                </div>
+                <h3 class="font-bold text-lg mb-4 text-gray-800 leading-tight min-h-[50px]">Specialist, Field Sales</h3>
+                <div class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-panda-pink"></i> Johor Bahru, Malaysia
+                </div>
+                <button onclick="openJobModal('Specialist, Field Sales', 'Johor Bahru, Malaysia')"
+                    class="bg-panda-pink text-white text-xs font-bold py-3 px-8 rounded-full uppercase tracking-wide hover:bg-pink-700 transition">Read
+                    More</button>
+            </div>
+
+            <div
+                class="job-card relative border border-gray-200 rounded-xl pt-12 pb-8 px-6 text-center flex flex-col items-center bg-white">
+                <div class="absolute top-4 right-4 text-panda-pink hover:scale-110 transition cursor-pointer"><i
+                        class="far fa-star text-lg"></i></div>
+                <div
+                    class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white border border-gray-100 p-3 rounded-full shadow-sm">
+                    <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                        class="w-8 opacity-80" alt="icon">
+                </div>
+                <h3 class="font-bold text-lg mb-4 text-gray-800 leading-tight min-h-[50px]">Specialist, Field Sales</h3>
+                <div class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-panda-pink"></i> Ipoh, Malaysia
+                </div>
+                <button onclick="openJobModal('Specialist, Field Sales', 'Ipoh, Malaysia')"
+                    class="bg-panda-pink text-white text-xs font-bold py-3 px-8 rounded-full uppercase tracking-wide hover:bg-pink-700 transition">Read
+                    More</button>
+            </div>
+
+            <div
+                class="job-card relative border border-gray-200 rounded-xl pt-12 pb-8 px-6 text-center flex flex-col items-center bg-white">
+                <div class="absolute top-4 right-4 text-panda-pink hover:scale-110 transition cursor-pointer"><i
+                        class="far fa-star text-lg"></i></div>
+                <div
+                    class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white border border-gray-100 p-3 rounded-full shadow-sm">
+                    <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                        class="w-8 opacity-80" alt="icon">
+                </div>
+                <h3 class="font-bold text-lg mb-4 text-gray-800 leading-tight min-h-[50px]">Specialist, Field Sales</h3>
+                <div class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-panda-pink"></i> Ipoh, Malaysia
+                </div>
+                <button onclick="openJobModal('Specialist, Field Sales', 'Ipoh, Malaysia')"
+                    class="bg-panda-pink text-white text-xs font-bold py-3 px-8 rounded-full uppercase tracking-wide hover:bg-pink-700 transition">Read
+                    More</button>
+            </div>
+
+            <div
+                class="job-card relative border border-gray-200 rounded-xl pt-12 pb-8 px-6 text-center flex flex-col items-center bg-white">
+                <div class="absolute top-4 right-4 text-panda-pink hover:scale-110 transition cursor-pointer"><i
+                        class="far fa-star text-lg"></i></div>
+                <div
+                    class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white border border-gray-100 p-3 rounded-full shadow-sm">
+                    <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                        class="w-8 opacity-80" alt="icon">
+                </div>
+                <h3 class="font-bold text-lg mb-4 text-gray-800 leading-tight min-h-[50px]">Manager, Retail Media &
+                    Partnerships</h3>
+                <div class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-panda-pink"></i> Bangsar South, Malaysia
+                </div>
+                <button onclick="openJobModal('Manager, Retail Media', 'Bangsar South, Malaysia')"
+                    class="bg-panda-pink text-white text-xs font-bold py-3 px-8 rounded-full uppercase tracking-wide hover:bg-pink-700 transition">Read
+                    More</button>
+            </div>
+
+            <div
+                class="job-card relative border border-gray-200 rounded-xl pt-12 pb-8 px-6 text-center flex flex-col items-center bg-white">
+                <div class="absolute top-4 right-4 text-panda-pink hover:scale-110 transition cursor-pointer"><i
+                        class="far fa-star text-lg"></i></div>
+                <div
+                    class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white border border-gray-100 p-3 rounded-full shadow-sm">
+                    <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                        class="w-8 opacity-80" alt="icon">
+                </div>
+                <h3 class="font-bold text-lg mb-4 text-gray-800 leading-tight min-h-[50px]">Lead Vendor Operations</h3>
+                <div class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-panda-pink"></i> Bangsar South, Malaysia
+                </div>
+                <button onclick="openJobModal('Lead Vendor Operations', 'Bangsar South, Malaysia')"
+                    class="bg-panda-pink text-white text-xs font-bold py-3 px-8 rounded-full uppercase tracking-wide hover:bg-pink-700 transition">Read
+                    More</button>
+            </div>
+
+            <div
+                class="job-card relative border border-gray-200 rounded-xl pt-12 pb-8 px-6 text-center flex flex-col items-center bg-white">
+                <div class="absolute top-4 right-4 text-panda-pink hover:scale-110 transition cursor-pointer"><i
+                        class="far fa-star text-lg"></i></div>
+                <div
+                    class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white border border-gray-100 p-3 rounded-full shadow-sm">
+                    <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                        class="w-8 opacity-80" alt="icon">
+                </div>
+                <h3 class="font-bold text-lg mb-4 text-gray-800 leading-tight min-h-[50px]">Specialist, Category &
+                    Commercial</h3>
+                <div class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-panda-pink"></i> Taguig, Philippines
+                </div>
+                <button onclick="openJobModal('Specialist, Category', 'Taguig, Philippines')"
+                    class="bg-panda-pink text-white text-xs font-bold py-3 px-8 rounded-full uppercase tracking-wide hover:bg-pink-700 transition">Read
+                    More</button>
+            </div>
+
+            <div
+                class="job-card relative border border-gray-200 rounded-xl pt-12 pb-8 px-6 text-center flex flex-col items-center bg-white">
+                <div class="absolute top-4 right-4 text-panda-pink hover:scale-110 transition cursor-pointer"><i
+                        class="far fa-star text-lg"></i></div>
+                <div
+                    class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white border border-gray-100 p-3 rounded-full shadow-sm">
+                    <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                        class="w-8 opacity-80" alt="icon">
+                </div>
+                <h3 class="font-bold text-lg mb-4 text-gray-800 leading-tight min-h-[50px]">Specialist, Strategic
+                    Account Mgmt</h3>
+                <div class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-panda-pink"></i> Singapore
+                </div>
+                <button onclick="openJobModal('Strategic Account Mgmt', 'Singapore')"
+                    class="bg-panda-pink text-white text-xs font-bold py-3 px-8 rounded-full uppercase tracking-wide hover:bg-pink-700 transition">Read
+                    More</button>
+            </div>
+
+        </div>
+
+        <div class="flex justify-between items-center text-xs text-gray-500 mb-16 border-t pt-4">
+            <div>RESULTS PER PAGE: 10 20 40</div>
+            <div class="flex gap-4 items-center">
+                <span class="font-bold text-black">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>10</span>
+                <span>11</span>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-panda-pink mb-8">Articles you might like</h2>
+
+            <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            alt="Culture">
+                        <div
+                            class="absolute bottom-2 left-2 bg-white/90 px-2 py-1 text-xs rounded font-bold text-gray-600">
+                            Friday, 12 July 2024</div>
+                    </div>
+                    <div class="p-6 bg-white border border-t-0 rounded-b-xl relative h-full">
+                        <div class="text-panda-pink text-xs font-bold uppercase mb-2">Panda Purpose</div>
+                        <h3 class="font-bold text-gray-800 text-lg mb-8">pandapurpose 2023: Delivering with purpose to
+                            local communities...</h3>
+                        <div
+                            class="absolute bottom-6 right-6 text-xs font-bold uppercase flex items-center gap-2 group-hover:text-panda-pink transition">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544367563-12123d8965cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            alt="Wellness">
+                        <div
+                            class="absolute bottom-2 left-2 bg-white/90 px-2 py-1 text-xs rounded font-bold text-gray-600">
+                            Thursday, 20 June 2024</div>
+                    </div>
+                    <div class="p-6 bg-white border border-t-0 rounded-b-xl relative h-full">
+                        <div class="text-panda-pink text-xs font-bold uppercase mb-2">Culture & Events</div>
+                        <h3 class="font-bold text-gray-800 text-lg mb-8">Building a Better Workplace: foodpanda's Mental
+                            Health Initiatives</h3>
+                        <div
+                            class="absolute bottom-6 right-6 text-xs font-bold uppercase flex items-center gap-2 group-hover:text-panda-pink transition">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            alt="Office">
+                        <div
+                            class="absolute bottom-2 left-2 bg-white/90 px-2 py-1 text-xs rounded font-bold text-gray-600">
+                            Friday, 10 May 2024</div>
+                    </div>
+                    <div class="p-6 bg-white border border-t-0 rounded-b-xl relative h-full">
+                        <div class="text-panda-pink text-xs font-bold uppercase mb-2">Culture & Events</div>
+                        <h3 class="font-bold text-gray-800 text-lg mb-8">Our Office Space: A Collaborative Hub for
+                            Innovation</h3>
+                        <div
+                            class="absolute bottom-6 right-6 text-xs font-bold uppercase flex items-center gap-2 group-hover:text-panda-pink transition">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <button id="viewAllBtn" onclick="loadMoreArticles()"
+                    class="border border-panda-pink text-panda-pink rounded-full px-8 py-2 text-sm font-bold uppercase hover:bg-panda-pink hover:text-white transition">View
+                    All</button>
+            </div>
+
+            <div class="flex justify-end gap-2 mt-4">
+                <button
+                    class="w-8 h-8 rounded-full border flex items-center justify-center text-gray-400 hover:text-panda-pink"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button
+                    class="w-8 h-8 rounded-full border flex items-center justify-center text-panda-pink border-panda-pink"><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-black text-white pt-12 pb-6 text-xs">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-8 gap-8">
+                <div class="space-y-2">
+                    <a href="#" class="block hover:underline">About Us</a>
+                    <a href="#" class="block hover:underline">Ecosystem</a>
+                    <a href="#" class="block hover:underline">Teams</a>
+                </div>
+                <div class="space-y-2">
+                    <a href="#" class="block hover:underline">Join Us</a>
+                    <a href="#" class="block hover:underline">Job Openings</a>
+                    <a href="#" class="block hover:underline">Our Values</a>
+                </div>
+                <div class="space-y-2">
+                    <a href="#" class="block hover:underline">Privacy Policies</a>
+                    <a href="#" class="block hover:underline">Cookies and similar technologies Policy</a>
+                </div>
+
+                <div class="flex-1 w-full md:w-auto md:max-w-xs">
+                    <div class="relative">
+                        <input type="text" placeholder="Start your job search"
+                            class="w-full rounded-full py-2 px-4 text-gray-800 focus:outline-none">
+                        <i class="fas fa-search absolute right-3 top-2.5 text-gray-800"></i>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-gray-800 mb-6">
+
+            <div class="flex items-center gap-2 text-gray-400">
+                <span>Connect with us:</span>
+                <i class="fab fa-linkedin text-xl text-white"></i>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div id="modalContent"
+            class="bg-white rounded-xl max-w-lg w-full p-8 mx-4 shadow-2xl relative transform scale-95 opacity-0 transition-all duration-300">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-panda-pink">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <img src="https://attraxcdnprod1-freshed3dgayb7c3.z01.azurefd.net/1481181/0f1cd41f-b5a4-4fa7-b963-a5706b26c90b/0.0.0/Blob/images/logo.svg"
+                        class="w-8">
+                </div>
+                <h2 id="modalTitle" class="text-2xl font-bold text-gray-800 mb-2"></h2>
+                <div class="h-1 w-16 bg-panda-pink mx-auto mb-4"></div>
+                <p id="modalBody" class="text-gray-600 mb-6 leading-relaxed"></p>
+
+                <button onclick="closeModal()"
+                    class="bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-bold hover:bg-gray-300 transition">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Modal Functionality ---
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalContent = document.getElementById('modalContent');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+
+        function openModal(title, bodyText) {
+            modalTitle.innerText = title;
+            modalBody.innerText = bodyText;
+
+            modalOverlay.classList.remove('hidden');
+            // Small delay to allow display:block to apply before adding opacity class for animation
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function openJobModal(jobTitle, location) {
+            const description = `You are viewing details for the position of ${jobTitle} located in ${location}. At foodpanda, we are always looking for talented individuals to join our team. Click Apply below to start your journey!`;
+            openModal(jobTitle, description);
+        }
+
+        function closeModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modalOverlay.classList.add('hidden');
+            }, 300); // Wait for animation to finish
+        }
+
+        // Close modal if clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // --- Load More Articles Functionality ---
+        function loadMoreArticles() {
+            const grid = document.getElementById('articles-grid');
+            const btn = document.getElementById('viewAllBtn');
+
+            // Simulate loading (optional UI feedback could go here)
+
+            // New Article Data (Dummy Data)
+            const newArticles = [
+                {
+                    date: 'Monday, 15 April 2024',
+                    category: 'Technology',
+                    title: 'Tech at foodpanda: How we use AI to deliver faster',
+                    img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                },
+                {
+                    date: 'Wednesday, 03 April 2024',
+                    category: 'Sustainability',
+                    title: 'Going Green: Our commitment to eco-friendly packaging',
+                    img: 'https://images.unsplash.com/photo-1542601906990-b4d3fb7d5fa5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                },
+                {
+                    date: 'Tuesday, 12 March 2024',
+                    category: 'Rider Stories',
+                    title: 'Meet the Heroes: A day in the life of a foodpanda rider',
+                    img: 'https://images.unsplash.com/photo-1617347454431-f49d7ff5c3b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                }
+            ];
+
+            // Generate HTML and Append
+            newArticles.forEach(article => {
+                const articleHTML = `
+                <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer group animate-fade-in-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="${article.img}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="${article.category}">
+                        <div class="absolute bottom-2 left-2 bg-white/90 px-2 py-1 text-xs rounded font-bold text-gray-600">${article.date}</div>
+                    </div>
+                    <div class="p-6 bg-white border border-t-0 rounded-b-xl relative h-full">
+                        <div class="text-panda-pink text-xs font-bold uppercase mb-2">${article.category}</div>
+                        <h3 class="font-bold text-gray-800 text-lg mb-8">${article.title}</h3>
+                        <div class="absolute bottom-6 right-6 text-xs font-bold uppercase flex items-center gap-2 group-hover:text-panda-pink transition">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                `;
+                grid.insertAdjacentHTML('beforeend', articleHTML);
+            });
+
+            // Hide button after loading (or keep it if you have infinite scroll logic)
+            btn.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

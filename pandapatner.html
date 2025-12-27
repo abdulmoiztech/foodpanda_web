@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>foodpanda Partner</title>
+  <link rel="icon" type="image/png" href="https://www.ladysoda.com/wp-content/uploads/2019/11/foodpanda-1.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      padding: 0 0 1rem 0;
+    }
+
+    .faq-answer.show {
+      max-height: 500px;
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+  <!-- Header -->
+  <header class="bg-white py-4 px-6 flex justify-between items-center">
+    <div class="flex items-center">
+      <img src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/logos/logo.svg?width=384"
+        alt="foodpanda partner" class="h-8" />
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 bg-gray-100 rounded-full px-3 py-2">
+        <i class="fas fa-globe text-sm"></i>
+        <span class="text-sm font-medium">EN</span>
+      </div>
+      <button
+        class="bg-pink-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-pink-700 transition">Login</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[600px] md:h-[800px]"
+    style="background-image: url('https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/testimonial-video/video-thumbnail.png?width=1920')">
+    <div class="absolute inset-0 bg-black opacity-40"></div>
+    <div class="relative container mx-auto px-6 py-12 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Register your restaurant with us!</h1>
+        <p class="text-xl text-white mb-8">Sign up easily, showcase your menu, and you can start reaching new customers
+        </p>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg">
+          <h2 class="text-2xl font-bold mb-6">Ready to boost your sales?</h2>
+
+          <form id="registration-form" class="space-y-4">
+            <div>
+              <input type="text" placeholder="Business name *"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required />
+            </div>
+            <div>
+              <input type="text" placeholder="Business Owner First Name *"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required />
+            </div>
+            <div>
+              <input type="text" placeholder="Business Owner Last Name *"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required />
+            </div>
+            <div>
+              <select
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required>
+                <option value="">Business type *</option>
+                <option value="restaurant">Restaurant</option>
+                <option value="cafe">Cafe</option>
+                <option value="bakery">Bakery</option>
+                <option value="cloud-kitchen">Cloud Kitchen</option>
+              </select>
+            </div>
+            <div>
+              <input type="email" placeholder="Email *"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required />
+            </div>
+            <div class="flex items-center">
+              <span class="text-gray-500 mr-2">+60</span>
+              <input type="tel" placeholder="Mobile phone number *"
+                class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                required />
+            </div>
+            <div class="flex items-start">
+              <input type="checkbox" id="same-number" class="mt-1 mr-2" checked />
+              <label for="same-number" class="text-sm">My Business Phone is the same as my Mobile Number</label>
+            </div>
+            <div class="flex items-start">
+              <input type="checkbox" id="whatsapp" class="mt-1 mr-2" checked />
+              <label for="whatsapp" class="text-sm">I'd like to get updates & promotions by <span
+                  class="text-green-600">WhatsApp <i class="fab fa-whatsapp ml-1"></i></span></label>
+            </div>
+            <button type="submit"
+              class="w-full bg-pink-600 text-white py-3 rounded-lg font-medium hover:bg-pink-700 transition">Register</button>
+          </form>
+
+          <p class="text-sm mt-4">Do you want to be a foodpanda rider? <a href="#"
+              class="text-pink-600 hover:underline">Click here</a></p>
+          <p class="text-xs mt-4 text-gray-500">This site is protected by reCAPTCHA and the Google <a href="#"
+              class="text-blue-600">Privacy Policy</a> and <a href="#" class="text-blue-600">Terms of Service</a> apply.
+          </p>
+        </div>
+      </div>
+
+      <div class="md:w-1/2">
+        <img
+          src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/opportunities/revenue.png?quality=100&width=384"
+          alt="Happy restaurant owners" class="rounded-lg shadow-lg" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Opportunities Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">foodpanda brings <span class="text-pink-600">new
+          opportunities</span></h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <img
+            src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/opportunities/revenue.png?quality=100&width=384"
+            alt="Connect With New Customers" class="mx-auto mb-6 h-24" />
+          <h3 class="text-xl font-bold mb-4">Connect With New Customers</h3>
+          <p class="text-gray-600">Adding your business to the platform means access to thousands of new customers in
+            different neighbourhoods.</p>
+        </div>
+
+        <div class="text-center p-6">
+          <img
+            src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/opportunities/revenue.png?quality=100&width=384"
+            alt="Unlock Revenue" class="mx-auto mb-6 h-24" />
+          <h3 class="text-xl font-bold mb-4">Unlock Revenue</h3>
+          <p class="text-gray-600">Let customers enjoy your business from anywhere, and capture the interest of new ones
+            who haven't tried it yet.</p>
+        </div>
+
+        <div class="text-center p-6">
+          <img
+            src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/opportunities/revenue.png?quality=100&width=384"
+            alt="Focus on Your Business" class="mx-auto mb-6 h-24" />
+          <h3 class="text-xl font-bold mb-4">Focus on Your Business</h3>
+          <p class="text-gray-600">We take care of all the payments and customer support, whilst our foodpanda riders
+            take care of the delivery. Leaving you to focus on what matters!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Today Section -->
+  <section class="py-16 bg-pink-600 text-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2">
+          <img
+            src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/testimonial-video/video-thumbnail.png?width=1920"
+            alt="Partner with foodpanda" class="rounded-lg shadow-lg" />
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Partner with foodpanda today</h2>
+          <p class="text-xl mb-6">Take your business to the next level by reaching new customers and boost your sales!
+          </p>
+          <button class="bg-white text-pink-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">Get
+            Started</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple and Easy Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">We make it <span class="text-pink-600">simple and
+          easy</span></h2>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-gray-50 p-6 rounded-lg text-center">
+          <img
+            src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/opportunities/revenue.png?quality=100&width=384"
+            alt="The Customer Orders" class="mx-auto mb-4 h-24" />
+          <h3 class="text-xl font-bold mb-2">The Customer Orders</h3>
+          <p class="text-gray-600">The customer places an order through the foodpanda app.</p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg text-center">
+          <img
+            src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/opportunities/revenue.png?quality=100&width=384"
+            alt="You Prepare" class="mx-auto mb-4 h-24" />
+          <h3 class="text-xl font-bold mb-2">You Prepare</h3>
+          <p class="text-gray-600">You will receive a notification to start preparing the order.</p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg text-center">
+          <img
+            src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/opportunities/revenue.png?quality=100&width=384"
+            alt="We Deliver" class="mx-auto mb-4 h-24" />
+          <h3 class="text-xl font-bold mb-2">We Deliver</h3>
+          <p class="text-gray-600">A foodpanda rider will be along shortly to pick up the order and deliver it to the
+            customer.</p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg text-center">
+          <img
+            src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/opportunities/revenue.png?quality=100&width=384"
+            alt="Watch Your Business Grow" class="mx-auto mb-4 h-24" />
+          <h3 class="text-xl font-bold mb-2">Watch Your Business Grow</h3>
+          <p class="text-gray-600">We provide you with insights so you can keep track of your revenue and performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-pink-600 text-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2">
+          <img
+            src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/testimonials/testimonial-1.jpeg?width=1920"
+            alt="Rider with panda backpack" class="rounded-lg shadow-lg" />
+        </div>
+        <div class="md:w-1/2">
+          <blockquote class="text-xl md:text-2xl font-medium mb-6">"foodpanda is a great platform for us to establish
+            the brand by aiming the correct target audience surrounding the community."</blockquote>
+          <p class="font-semibold">Siao Hui</p>
+          <p class="text-sm">Calisto</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-pink-600 text-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+        <div class="md:w-1/2">
+          <img
+            src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/testimonials/testimonial-1.jpeg?width=1920"
+            alt="Restaurant owner holding burger" class="rounded-lg shadow-lg" />
+        </div>
+        <div class="md:w-1/2">
+          <blockquote class="text-xl md:text-2xl font-medium mb-6">"foodpanda definitely helped me increase my daily
+            sales! The app enables customers to access my menu & restaurant easily."</blockquote>
+          <p class="font-semibold">Faruq Salim</p>
+          <p class="text-sm">Mee/Kuew Tiaw/Bihun Kicap, Kari & Goreng Ipoh By Yob Faruq, Petaling Jaya</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Any questions?</h2>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>Why should I partner with foodpanda?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>By signing up as a panda partner, you can:</p>
+            <ul class="list-disc pl-6 mt-2">
+              <li>Reach new customers in your area</li>
+              <li>Increase your sales and revenue</li>
+              <li>Focus on your business while we handle delivery and customer service</li>
+              <li>Access valuable business insights and analytics</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>Is my restaurant a good fit for foodpanda?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>To qualify, foodpanda partners must meet the following regulations:</p>
+            <ul class="list-disc pl-6 mt-2">
+              <li>Have a valid business license</li>
+              <li>Comply with local food safety regulations</li>
+              <li>Provide high-quality food that can be delivered</li>
+              <li>Be located in areas where foodpanda operates</li>
+            </ul>
+            <p class="mt-4">Not in our area yet? We'd love to have you on board when we expand our coverage!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>What are the requirements to become a partner?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>To register as a foodpanda partner, you'll need to provide the following documents:</p>
+            <ol class="list-decimal pl-6 mt-2">
+              <li>SSM / Local Business license</li>
+              <li>Halal certificate (if applicable)</li>
+              <li>Business owner IC</li>
+              <li>Dine-in menu</li>
+            </ol>
+            <p class="mt-4">Having these documents ready will help speed up the approval process.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>Can I join without a physical storefront?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! If you're under HomeChef or a cloud kitchen owner, you can sign up with the necessary documents.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How do I become a foodpanda partner?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Fill out the registration form above with a valid phone number and email address. Our team will be in
+              touch to guide you through the process.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How long does the approval process take?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>The approval process typically takes 2-5 working days, as long as all required documents and details are
+              submitted. This includes your business documents, dine-in menu, opening hours, and dish photos.</p>
+            <p class="mt-4">Please ensure you are available by phone, as our team may call you for activation or
+              additional guidance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How do I know if my business is verified?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Once you're verified, you'll get an email with your portal username and password. Please make sure to
+              consistently check your email for any updates. Note this doesn't mean your business is already active on
+              our platform. To get your business up and running on foodpanda, complete the following steps:</p>
+            <p class="mt-4"><strong>Mandatory:</strong></p>
+            <ul class="list-disc pl-6 mt-2">
+              <li>Complete your business profile</li>
+              <li>Upload your menu</li>
+              <li>Set your operating hours</li>
+            </ul>
+            <p class="mt-4"><strong>Optional:</strong></p>
+            <ul class="list-disc pl-6 mt-2">
+              <li>Add promotional offers</li>
+              <li>Set up payment methods</li>
+              <li>Configure delivery zones</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>What is the commission fee for partners?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We offer several commission fee packages on foodpanda, which may be updated from time to time. Choose the
+              package that best fits your business, and the exact commission rate will be shown in your commission
+              package during the registration process.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>Can I pause orders if it gets too busy?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, you can temporarily pause orders on the GO application. You can also indicate that your store is
+              busy, letting customers know to expect longer prep times.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How can I contact partner support?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>You can access partner support directly from the Help button, available only on the panda partner portal
+              (web version).</p>
+            <p class="mt-4">Simply click the Help button at the top right corner of the portal.</p>
+            <p class="mt-4">From there, you can browse support topics, find step-by-step answers, or raise a request if
+              you need further assistance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How can I increase sales in my restaurant?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Increasing restaurant sales involves a multi-pronged approach. Here are some key strategies:</p>
+            <ul class="list-disc pl-6 mt-2">
+              <li><strong>Optimise your menu:</strong> Offer a diverse selection of dishes that cater to different
+                tastes and dietary needs. Use high-quality ingredients and present your dishes attractively. Consider
+                seasonal specials and promotions to keep your menu fresh and exciting.</li>
+              <li><strong>Enhance customer experience:</strong> Provide excellent service, create a welcoming
+                atmosphere, and ensure customer satisfaction. Encourage feedback and address any concerns promptly.</li>
+              <li><strong>Leverage online platforms:</strong> Partner with food delivery services like foodpanda to
+                expand your reach and attract new customers. Optimise your online menu with enticing descriptions and
+                high-quality photos.</li>
+              <li><strong>Implement marketing strategies:</strong> Utilise social media, email marketing, and local
+                advertising to promote your restaurant and special offers. Consider loyalty programs to reward repeat
+                customers.</li>
+              <li><strong>Manage costs effectively:</strong> Monitor your expenses closely and identify areas where you
+                can reduce costs without compromising quality. Negotiate with suppliers for better deals and minimise
+                waste.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How can I upsell effectively in my restaurant?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Upselling is a great way to increase average order value. Here are some effective techniques:</p>
+            <ul class="list-disc pl-6 mt-2">
+              <li><strong>Offer combo deals:</strong> Create attractive combo meals or set meals that offer a discount
+                compared to ordering items separately.</li>
+              <li><strong>Suggestive selling:</strong> Train your staff to recommend complementary dishes, drinks, or
+                appetizers. For example, suggest a specific wine pairing with a particular dish or offer a side of fries
+                with a burger.</li>
+              <li><strong>Highlight premium options:</strong> Draw attention to your higher-priced items by describing
+                them in detail and emphasising their unique qualities.</li>
+              <li><strong>Use visual cues:</strong> Place strategically positioned posters or menu boards showcasing
+                your most profitable items.</li>
+              <li><strong>Train your staff:</strong> Equip your team with the knowledge and skills to upsell effectively
+                without being pushy.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How can I promote my restaurant effectively?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Effective restaurant promotion involves a mix of online and offline strategies:</p>
+            <ul class="list-disc pl-6 mt-2">
+              <li><strong>Build a strong online presence:</strong> Create a professional website and actively engage on
+                social media platforms. Share high-quality photos of your food, promote special offers, and interact
+                with your followers.</li>
+              <li><strong>List your restaurant on online directories:</strong> Ensure your restaurant is listed on
+                popular online directories and review platforms.</li>
+              <li><strong>Utilise local partnerships:</strong> Collaborate with nearby businesses, hotels, and community
+                organizations to reach a wider audience. Partner with food delivery services like foodpanda to expand
+                your reach and attract new customers.</li>
+              <li><strong>Host events and promotions:</strong> Organise special events, themed nights, or contests to
+                attract new customers and generate buzz.</li>
+              <li><strong>Encourage word-of-mouth marketing:</strong> Provide exceptional service and encourage
+                satisfied customers to leave positive reviews and recommend your restaurant to others.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How can I create an appealing restaurant menu?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Your menu is a crucial marketing tool. Here are some tips for creating an appealing menu:</p>
+            <ul class="list-disc pl-6 mt-2">
+              <li><strong>Use clear and concise language:</strong> Describe your dishes in a way that is easy to
+                understand and enticing.</li>
+              <li><strong>Highlight signature dishes:</strong> Draw attention to your most popular and profitable items.
+              </li>
+              <li><strong>Use high-quality photos:</strong> Include professional photos of your dishes to make them look
+                more appealing.</li>
+              <li><strong>Organise your menu logically:</strong> Group similar items together and use clear headings to
+                make it easy for customers to navigate.</li>
+              <li><strong>Consider your menu design:</strong> Choose a font and layout that is easy to read and visually
+                appealing.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How can I improve my restaurant's online presence?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>In today's digital age, a strong online presence is essential. Here's how to improve yours:</p>
+            <ul class="list-disc pl-6 mt-2">
+              <li><strong>Claim your business listings:</strong> Ensure your restaurant is listed accurately on Google
+                My Business, Yelp, and other relevant platforms.</li>
+              <li><strong>Optimise your website:</strong> Make sure your website is mobile-friendly, easy to navigate,
+                and contains essential information like your menu, hours, location, and contact details.</li>
+              <li><strong>Engage on social media:</strong> Create profiles on popular social media platforms and share
+                engaging content regularly.</li>
+              <li><strong>Encourage online reviews:</strong> Actively solicit reviews from satisfied customers and
+                respond to feedback promptly.</li>
+              <li><strong>Utilise online advertising:</strong> Consider running targeted online ads to reach potential
+                customers in your area.</li>
+              <li><strong>Leverage online platforms:</strong> Partner with food delivery services like foodpanda to
+                expand your reach and attract new customers. Optimise your online menu with enticing descriptions and
+                high-quality photos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How can I improve my restaurant's operations?</span>
+            <i class="fas fa-chevron-down text-gray-500"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Efficient restaurant operations are crucial for profitability and customer satisfaction. Here are some
+              key areas to focus on:</p>
+            <ul class="list-disc pl-6 mt-2">
+              <li><strong>Streamline workflows:</strong> Optimise your kitchen layout and processes to ensure smooth and
+                efficient food preparation. Minimise bottlenecks and cross-traffic to reduce delays and errors.</li>
+              <li><strong>Inventory management:</strong> Implement a robust inventory management system to track your
+                supplies, minimise waste, and ensure you have the ingredients you need when you need them.</li>
+              <li><strong>Staff training:</strong> Invest in comprehensive staff training to ensure your team is
+                knowledgeable about your menu, service standards, and operational procedures.</li>
+              <li><strong>Technology integration:</strong> Utilise technology to automate tasks, improve communication,
+                and enhance efficiency. Consider POS systems, online ordering platforms, and inventory management
+                software.</li>
+              <li><strong>Customer feedback:</strong> Actively solicit customer feedback and use it to identify areas
+                for improvement in your operations. Address any concerns promptly and make adjustments as needed.</li>
+              <li><strong>Delivery optimisation:</strong> If you offer delivery services, optimise your delivery process
+                to ensure timely and efficient delivery. Consider using route optimisation software and partnering with
+                reliable delivery services like foodpanda.</li>
+            </ul>
+            <p class="mt-4">By addressing these key areas, you can create a well-oiled machine that delivers exceptional
+              food and service, leading to increased customer satisfaction and profitability.</p>
+            <p class="mt-2">Remember, continuous improvement is key. Regularly review your operations and identify areas
+              where you can make further enhancements. Don't be afraid to experiment with new ideas and technologies to
+              stay ahead of the curve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-12">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-start">
+        <div class="mb-8 md:mb-0">
+          <img src="https://images.deliveryhero.io/image/vrm-self-signup/landing-pages/FP/logos/logo.svg?width=384"
+            alt="foodpanda partner" class="h-8 mb-6" />
+          <p class="text-sm text-gray-600">© foodpanda 2025</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8 md:mb-0">
+          <div>
+            <h4 class="font-semibold mb-4">About us</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><a href="#" class="hover:text-pink-600">About us</a></li>
+              <li><a href="#" class="hover:text-pink-600">Terms</a></li>
+              <li><a href="#" class="hover:text-pink-600">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Contact us</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><a href="#" class="hover:text-pink-600">Contact us</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="flex gap-4">
+              <a href="#" class="text-pink-600 hover:text-pink-700">
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </a>
+              <a href="#" class="text-pink-600 hover:text-pink-700">
+                <i class="fab fa-youtube text-xl"></i>
+              </a>
+              <a href="#" class="text-pink-600 hover:text-pink-700">
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex gap-4">
+              <a href="#" class="block">
+                <img src="https://placehold.co/150x50/2d3748/ffffff?text=Google+Play" alt="Google Play" class="h-10" />
+              </a>
+              <a href="#" class="block">
+                <img src="https://placehold.co/150x50/2d3748/ffffff?text=App+Store" alt="App Store" class="h-10" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    function toggleFAQ(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('i');
+
+      // Close all other answers
+      document.querySelectorAll('.faq-answer').forEach(el => {
+        if (el !== answer) {
+          el.classList.remove('show');
+          el.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+          el.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+        }
+      });
+
+      // Toggle current answer
+      answer.classList.toggle('show');
+      if (answer.classList.contains('show')) {
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+      } else {
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+      }
+    }
+
+    // Handle form submission
+    document.getElementById('registration-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Thank you for registering! Our team will contact you soon.');
+    });
+  </script>
+</body>
+
+</html>

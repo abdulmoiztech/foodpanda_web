@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foodpanda Partner Clone</title>
+    <link rel="icon" type="image/png" href="https://www.ladysoda.com/wp-content/uploads/2019/11/foodpanda-1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .active-btn {
+            background-color: black !important;
+            color: white !important;
+            border-color: black !important;
+        }
+
+        .country-btn:hover:not(.active-btn) {
+            background-color: #ff2b85;
+            color: white;
+            border-color: #ff2b85;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <!-- Logo -->
+            <img src="https://www.foodpanda.com/wp-content/uploads/2023/06/foodpanda_logo_2023.svg" class="logo"
+                alt="foodpanda">
+
+            <!-- Desktop Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="aboutpg.html" class="nav-link">About</a>
+                <a href="newsroom.html" class="nav-link">Newsroom</a>
+                <a href="partners.html" class="nav-link active">Partners</a>
+                <a href="pandaads.html" class="nav-link">Panda Ads</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="jobs.html" class="nav-link">Careers</a>
+            </nav>
+
+
+            <!-- Choose Location -->
+            <div class="location-wrapper">
+                <button id="locationBtn" class="location-btn">Choose location</button>
+
+                <button class="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+
+                <ul id="locationDropdown" class="location-dropdown">
+                    <li>Bangladesh</li>
+                    <li>Cambodia</li>
+                    <li>Hong Kong</li>
+                    <li>Laos</li>
+                    <li>Malaysia</li>
+                    <li>Myanmar</li>
+                    <li>Pakistan</li>
+                    <li>Philippines</li>
+                    <li>Singapore</li>
+                    <li>Taiwan</li>
+                    <li>Thailand</li>
+                </ul>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="hamburger" class="hamburger">☰</button>
+
+        </div>
+    </header>
+
+    <!-- ================= MOBILE MENU ================= -->
+    <div id="mobileMenu" class="mobile-menu">
+        <div class="mobile-top">
+            <img src="https://www.foodpanda.com/wp-content/uploads/2023/06/foodpanda_logo_2023.svg">
+            <span id="closeMenu">✕</span>
+        </div>
+
+        <ul class="mobile-links">
+            <li>Home</li>
+            <li><a href="aboutpg.html">About</a></li>
+            <li><a href="newsroom.html">Newsroom</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="pandaads.html">panda ads</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <a href="jobs.html" class="nav-link">Careers</a>
+
+            <!-- Mobile Choose Location -->
+            <li id="mobileLocationBtn">Choose location ▸</li>
+            <ul id="mobileLocationDropdown" class="mobile-location">
+                <li>Bangladesh</li>
+                <li>Cambodia</li>
+                <li>Hong Kong</li>
+                <li>Laos</li>
+                <li>Malaysia</li>
+                <li>Myanmar</li>
+                <li>Pakistan</li>
+                <li>Philippines</li>
+                <li>Singapore</li>
+                <li>Taiwan</li>
+                <li>Thailand</li>
+            </ul>
+        </ul>
+    </div>
+
+
+
+
+
+    <section class="relative h-[500px] bg-cover bg-center flex items-center"
+        style="background-image: url('https://www.foodpanda.com/wp-content/uploads/2025/07/join-panda-partner-to-grow-restaurant-sales.png');">
+        <div class="container mx-auto px-6">
+            <div class="max-w-md bg-white/90 p-8 rounded-lg shadow-lg">
+                <h1 class="text-4xl font-bold mb-4 leading-tight">Get more orders with foodpanda</h1>
+                <a href="#country-section"
+                    class="inline-block bg-[#ff2b85] text-white px-8 py-3 rounded-md font-bold hover:bg-[#e02475] transition">Become
+                    a Partner!</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="country-section" class="py-16 text-center container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4">Become a restaurant or local shop partner</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto mb-10">Take your business to new heights by partnering with foodpanda,
+            the leading delivery service trusted by businesses large and small.</p>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-12" id="btn-container">
+            <button onclick="changeCountry('Malaysia', this)"
+                class="country-btn active-btn border-2 border-pink-500 text-pink-500 px-6 py-1 rounded-full font-semibold transition">Malaysia</button>
+            <button onclick="changeCountry('Philippines', this)"
+                class="country-btn border-2 border-pink-500 text-pink-500 px-6 py-1 rounded-full font-semibold transition">Philippines</button>
+            <button onclick="changeCountry('Bangladesh', this)"
+                class="country-btn border-2 border-pink-500 text-pink-500 px-6 py-1 rounded-full font-semibold transition">Bangladesh</button>
+            <button onclick="changeCountry('Hong Kong', this)"
+                class="country-btn border-2 border-pink-500 text-pink-500 px-6 py-1 rounded-full font-semibold transition">Hong
+                Kong</button>
+            <button onclick="changeCountry('Pakistan', this)"
+                class="country-btn border-2 border-pink-500 text-pink-500 px-6 py-1 rounded-full font-semibold transition">Pakistan</button>
+            <button onclick="changeCountry('Singapore', this)"
+                class="country-btn border-2 border-pink-500 text-pink-500 px-6 py-1 rounded-full font-semibold transition">Singapore</button>
+            <button onclick="changeCountry('Taiwan', this)"
+                class="country-btn border-2 border-pink-500 text-pink-500 px-6 py-1 rounded-full font-semibold transition">Taiwan</button>
+            <button onclick="changeCountry('Cambodia', this)"
+                class="country-btn border-2 border-pink-500 text-pink-500 px-6 py-1 rounded-full font-semibold transition">Cambodia</button>
+            <button onclick="changeCountry('Laos', this)"
+                class="country-btn border-2 border-pink-500 text-pink-500 px-6 py-1 rounded-full font-semibold transition">Laos</button>
+            <button onclick="changeCountry('Myanmar', this)"
+                class="country-btn border-2 border-pink-500 text-pink-500 px-6 py-1 rounded-full font-semibold transition">Myanmar</button>
+        </div>
+
+        <div id="dynamic-content" class="flex flex-col md:flex-row items-center gap-10 text-left fade-in">
+            <div class="md:w-1/2">
+                <h3 id="c-title" class="text-4xl font-bold mb-4">Are you ready to reach more customers in Malaysia?</h3>
+                <p id="c-desc" class="text-gray-600 mb-6">Don't miss out on earnings. Join foodpanda to reach more
+                    customers and increase revenue across Malaysia's vibrant food scene.</p>
+                <a href="pandapatner.html"
+                    class="inline-block bg-[#ff2b85] text-white px-8 py-3 rounded-md font-bold hover:bg-[#e02475] transition">Let's
+                    get started!</a>
+            </div>
+            <div class="md:w-1/2">
+                <img id="c-img"
+                    src="https://www.foodpanda.com/wp-content/uploads/2025/07/mehdi-ben-BOhxVT-VCRs-unsplash-900x600.webp"
+                    alt="Country" class="rounded-lg shadow-lg w-full h-[400px] object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12">Why partner with foodpanda?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="relative overflow-hidden rounded-lg group h-80">
+                    <img src="https://www.foodpanda.com/wp-content/uploads/2025/07/Riders_C-SM_photo_static_horizontal_retouch-batch-2_V02_SJ-900x600.webp"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/30 flex items-start p-6">
+                        <h4 class="text-white font-bold text-xl uppercase">Reach New Customers</h4>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg group h-80">
+                    <img src="https://www.foodpanda.com/wp-content/uploads/2023/02/foodpanda-home-2-900x506.jpg"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/30 flex items-start p-6">
+                        <h4 class="text-white font-bold text-xl uppercase">Boost Your Volume</h4>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg group h-80">
+                    <img src="https://www.foodpanda.com/wp-content/uploads/2023/02/foodpanda-home-2-900x506.jpg"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/30 flex items-start p-6">
+                        <h4 class="text-white font-bold text-xl uppercase">Drive More Sales</h4>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg group h-80">
+                    <img src="https://www.foodpanda.com/wp-content/uploads/2021/09/【新聞圖片3】foodpanda-精選多家高人氣烤肉餐廳，經典美食一鍵到府幫你解解饞！-1-900x600.jpg"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/30 flex items-start p-6">
+                        <h4 class="text-white font-bold text-xl uppercase">Increase Satisfaction</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-12">How does it work?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <i class="fas fa-mobile-alt text-4xl text-[#ff2b85] mb-4"></i>
+                <h5 class="font-bold text-lg mb-2">1</h5>
+                <p class="text-sm text-gray-600">The customer adds their delivery address in the app or on the website.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <i class="fas fa-tablet-alt text-4xl text-[#ff2b85] mb-4"></i>
+                <h5 class="font-bold text-lg mb-2">2</h5>
+                <p class="text-sm text-gray-600">You accept the order with the reading tablet and prepare it for
+                    collection.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <i class="fas fa-motorcycle text-4xl text-[#ff2b85] mb-4"></i>
+                <h5 class="font-bold text-lg mb-2">3</h5>
+                <p class="text-sm text-gray-600">A rider will come to you at the specified time and collect the order.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <i class="fas fa-wallet text-4xl text-[#ff2b85] mb-4"></i>
+                <h5 class="font-bold text-lg mb-2">4</h5>
+                <p class="text-sm text-gray-600">Twice per month you receive payments for the orders you have received.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-8">Have more questions? Check it out here</h2>
+            <div class="space-y-4">
+                <div class="border-b border-gray-300">
+                    <button onclick="toggleFaq(1)"
+                        class="w-full flex justify-between items-center py-4 text-left font-semibold hover:text-[#ff2b85]">
+                        How can I receive orders? <i class="fas fa-chevron-down text-sm" id="icon-1"></i>
+                    </button>
+                    <div id="faq-1" class="hidden pb-4 text-gray-600">
+                        You will receive orders through the foodpanda merchant tablet provided during onboarding.
+                    </div>
+                </div>
+                <div class="border-b border-gray-300">
+                    <button onclick="toggleFaq(2)"
+                        class="w-full flex justify-between items-center py-4 text-left font-semibold hover:text-[#ff2b85]">
+                        Are there any costs if I register on the site? <i class="fas fa-chevron-down text-sm"
+                            id="icon-2"></i>
+                    </button>
+                    <div id="faq-2" class="hidden pb-4 text-gray-600">
+                        Registration is free, but there is a commission fee per order to cover delivery and platform
+                        services.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Logo Row -->
+            <div class="footer-logo-row">
+                <img src="https://www.foodpanda.com/wp-content/uploads/2023/06/foodpanda_logo_2023.svg"
+                    alt="foodpanda logo">
+            </div>
+
+            <!-- Links Grid -->
+            <div class="footer-links-grid">
+                <!-- Column 1: Navigate -->
+                <div class="footer-col">
+                    <h3>Navigate</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutpg.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="newsroom.html">Newsroom</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Collaborate -->
+                <div class="footer-col">
+                    <h3>Collaborate</h3>
+                    <ul>
+                        <li><a href="jobs.html">Explore careers</a></li>
+                        <li><a href="pandapatner.html">Become a rider</a></li>
+                        <li><a href="partners.html">Feed your team</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Follow us (Socials) -->
+                <div class="footer-col social-col">
+                    <h3>Follow us on</h3>
+                    <div class="social-icons">
+                        <a href="index.html" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                            </svg>
+                        </a>
+                        <a href="index.html" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.066 11.993V6.287H3.66v5.706h1.406zM4.332 5.617c.463 0 .762-.303.762-.682s-.299-.682-.762-.682c-.463 0-.762.303-.762.682s.299.682.762.682zM12.67 12V8.45c0-1.898-.992-2.784-2.338-2.784-1.086 0-1.572.603-1.841 1.018V6.287H7.066s.018.397 0 5.706h1.425V9.456s.005-1.127.05-1.541c.068-.614.526-1.103 1.156-1.103.822 0 1.15.627 1.15 1.541V12h1.425z" />
+                            </svg>
+                        </a>
+                        <a href="index.html" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.232-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="copyright">Copyright © 2025 foodpanda</p>
+                <a href="privacy.html" class="privacy-link">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+        </svg>
+    </button>
+
+
+    <script>
+        const countryData = {
+            'Malaysia': { img: 'https://www.foodpanda.com/wp-content/uploads/2025/07/mehdi-ben-BOhxVT-VCRs-unsplash-900x600.webp', desc: "Don't miss out on earnings. Join foodpanda to reach more customers in Malaysia." },
+            'Pakistan': { img: 'https://www.foodpanda.com/wp-content/uploads/2025/07/polly-sadler-900x600.webp', desc: "Expand your restaurant reach across major cities like Karachi, Lahore, and Islamabad." },
+            'Philippines': { img: 'https://www.foodpanda.com/wp-content/uploads/2025/07/sj-Q4aFSPmYjNE-unsplash-900x600.webp', desc: "Connect with foodies in Manila and beyond by joining our growing network." },
+            'Bangladesh': { img: 'https://www.foodpanda.com/wp-content/uploads/2025/07/johnyvino-P-900x600.webp', desc: "Serve more hungry customers in Dhaka and Chittagong with foodpanda." },
+            'Hong Kong': { img: 'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=800', desc: "Leverage the power of foodpanda to scale your business in Hong Kong." },
+            'Singapore': { img: 'https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?w=800', desc: "Join Singapore's leading delivery platform and watch your sales grow." },
+            'Taiwan': { img: 'https://www.foodpanda.com/wp-content/uploads/2025/07/polly-sadler-900x600.webp', desc: "Bring your local Taiwanese specialties to more customers today." },
+            'Cambodia': { img: 'https://images.unsplash.com/photo-1500049242364-5f500807cdd7?w=800', desc: "Start delivering to thousands of customers across Cambodia now." },
+            'Laos': { img: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=800', desc: "Grow your business in Laos with our efficient delivery partners." },
+            'Myanmar': { img: 'https://www.foodpanda.com/wp-content/uploads/2025/07/tatiana-demelo-a22j2b-900x600.webp', desc: "Expand your footprint in Myanmar's growing food delivery market." }
+        };
+
+        function changeCountry(name, btn) {
+            // Update Active Button
+            document.querySelectorAll('.country-btn').forEach(b => b.classList.remove('active-btn'));
+            btn.classList.add('active-btn');
+
+            // Update Content with Animation
+            const container = document.getElementById('dynamic-content');
+            container.classList.remove('fade-in');
+            void container.offsetWidth; // Trigger reflow
+            container.classList.add('fade-in');
+
+            document.getElementById('c-title').innerText = `Are you ready to reach more customers in ${name}?`;
+            document.getElementById('c-desc').innerText = countryData[name].desc;
+            document.getElementById('c-img').src = countryData[name].img;
+        }
+
+        function toggleFaq(id) {
+            const el = document.getElementById(`faq-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            el.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+    </script>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
